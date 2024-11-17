@@ -16,10 +16,9 @@ const Banner: React.FC = () => {
         <br />
         Seu bolso e o futuro.<br />
       </div>
-      <p>
-        Experience a new way to draw attention to key elements with stunning{' '}
-        <span>illuminated text.</span> Perfect for making a bold statement, this dynamic
-        design ensures your content stands out effortlessly.
+      <p className="banner-desc">
+      Economize energia, poupe recursos, e invista no futuro com a {' '}
+        <span>EcoWatt:</span> sua aliada em sustentabilidade.
       </p>
 
       <svg

@@ -1,153 +1,439 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{ box-sizing: border-box; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-behavior: smooth;}
-html, body { height: 100%; overflow: hidden;}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
 
 body {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    font-family: Poppins;
-    background: rgb(58, 68, 58);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: Poppins;
+  background: rgb(58, 68, 58);
 
-    font-size: calc(var(--_size) * 0.022);
-    --_factor: min(1000px, 100vh);
-    --_size: min(var(--_factor), 100vw);
+  font-size: calc(var(--_size) * 0.022);
+  --_factor: min(1000px, 100vh);
+  --_size: min(var(--_factor), 100vw);
 }
-svg.filters { display: none; }
+
+svg.filters {
+  display: none;
+}
+
 .header-text {
-    color: #c8c2bd;
-    font-size: 3em;
-    text-align: center;
-    line-height: 1.0625;
-    font-weight: 600;
-    letter-spacing: -0.009em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #c8c2bd;
+  font-size: 3em;
+  font-weight: 600;
 }
-.glow-filter{
-    position: relative;
-    display: inline-block;
-    scale: 1;
 
-    animation: onloadscale 1s ease-out forwards;
+.glow-filter {
+  position: relative;
+  display: inline-block;
+  scale: 1;
+  animation: onloadscale 1s ease-out forwards;
 }
-.glow-filter::before{
-    content: attr(data-text);
-    position: absolute;
-    pointer-events: none;
-    color:  #fffaf6;
-    background: linear-gradient(0deg, #dfe5ee 0%, #fffaf6 50%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: url(#glow-4);
 
-    opacity: 0;
-    animation: onloadopacity 1s ease-out forwards;
+.glow-filter::before {
+  content: attr(data-text);
+  position: absolute;
+  pointer-events: none;
+  color: #fffaf6;
+  background: linear-gradient(0deg, #dfe5ee 0%, #fffaf6 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: url(#glow-4);
+  opacity: 0;
+  animation: onloadopacity 1s ease-out forwards;
 }
+
 @keyframes onloadscale {
-    24% { scale: 1; }
-    100% { scale: 1.02; }
+  24% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.02;
+  }
 }
+
 @keyframes onloadopacity {
-    24% { opacity: 0; }
-    100% { opacity: 1; }
+  24% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-p {
-    position: absolute;
-    color:  #86868b;
-    font-weight: 600;
-    background: linear-gradient(0deg,#86868b 0%, #bdc2c9 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    top: 0; bottom: 0; margin: auto;
-    height: fit-content;
-    translate: 0 12em;
-    max-width: 28em;
-    text-align: center;
-}
-p span {
-    position: relative;
-    display: inline-block;
-    -webkit-text-fill-color:#e7dfd6;
-    font-weight: 1000;
+.banner-desc {
+  position: absolute;
+  text-align: center;
+  color: #86868b;
+  font-weight: 600;
+  background: linear-gradient(0deg, #86868b 0%, #bdc2c9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 20%;
+  max-width: none;
+  height: fit-content;
 }
 
+.banner-desc span {
+  position: relative;
+  display: inline-block;
+  -webkit-text-fill-color: #e7dfd6;
+  font-weight: 300;
+}
 
 .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background: rgb(58, 68, 58);
+}
+
+.bg>div {
+  position: absolute;
+  width: 50%;
+  /* Ajustado para ocupar 50% da largura inicialmente */
+  height: 100%;
+  /* Ajustado para ocupar 50% da altura inicialmente */
+  border-radius: 50%;
+  box-shadow: inset 0 0 4em 3em rgba(238, 200, 175, 0.2), inset 0 0 2em 0.4em rgba(238, 200, 175, 0.2),
+    0 0 0.1em 0.1em rgba(238, 200, 175, 0.2), 0 0 1em 0.4em rgba(238, 200, 175, 0.3);
+  opacity: 0.6;
+  transform: scale(1.2);
+  animation: onloadbgt 2.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+
+}
+
+.bg>div:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: onloadbgt 2.5s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+.bg>div:nth-child(2) {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  animation: onloadbgb 2.5s ease-out forwards;
+  will-change: transform, opacity;
+}
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .bg>div {
+    width: 50%;
+    /* Aumenta o tamanho do círculo para 70% da tela em tablets */
+    height: 80%;
+    /* Aumenta a altura do círculo */
+    transform: scale(1);
+    /* Ajusta a escala para manter a proporção */
+  }
+}
+
+@media (max-width: 480px) {
+  .bg>div {
     width: 100%;
-    height: 100%;
-    overflow: hidden; /* Evitar que os círculos saiam da tela */
+    /* Em telas menores, o círculo ocupa 90% da largura */
+    height: 70%;
+    /* Aumenta a altura do círculo */
+    transform: scale(1);
+    /* Ajusta para escala mais apropriada */
   }
-  
-  .bg > div {
-    position: absolute;
-    width: 40%; /* Ajustado para ocupar 50% da largura inicialmente */
-    height: 90%; /* Ajustado para ocupar 50% da altura inicialmente */
-    border-radius: 50%;
-    box-shadow: inset 0 0 4em 3em rgba(238, 200, 175, 0.2), inset 0 0 2em 0.4em rgba(238, 200, 175, 0.2),
-      0 0 0.1em 0.1em rgba(238, 200, 175, 0.2), 0 0 1em 0.4em rgba(238, 200, 175, 0.3);
-    opacity: 0.6;
-    transform: scale(1.2);
-    animation: onloadbg 1s ease-in-out forwards;
+}
+
+@keyframes onloadbgt {
+  0% {
+    transform: translate(-50%, -150%); /* Sobe de fora da tela */
+    opacity: 0.3;
   }
-  
-  .bg > div:nth-child(1) {
-    top: 0; /* Colocar a metade superior do círculo no topo */
-    left: 50%; /* Alinhar horizontalmente ao centro */
-    transform: translateX(-50%) translateY(-50%); /* Ajuste para centralizar o círculo */
-    animation: onloadbgt 1s ease-in-out forwards;
+  100% {
+    transform: translate(-50%, 0); /* Para no centro */
+    opacity: 0.8;
   }
-  
-  .bg > div:nth-child(2) {
-    bottom: 0; /* Colocar a metade inferior do círculo no fundo */
-    left: 50%; /* Alinhar horizontalmente ao centro */
-    transform: translateX(-50%) translateY(50%); /* Ajuste para centralizar o círculo */
-    animation: onloadbgb 1s ease-in-out forwards;
+}
+
+@keyframes onloadbgb {
+  0% {
+    transform: translate(-50%, 150%); /* Desce de fora da tela */
+    opacity: 0.3;
   }
-  
-  /* Ajuste para telas menores */
-  @media (max-width: 768px) {
-    .bg > div {
-      width: 50%; /* Aumenta o tamanho do círculo para 70% da tela em tablets */
-      height: 80%; /* Aumenta a altura do círculo */
-      transform: scale(1); /* Ajusta a escala para manter a proporção */
-    }
+  100% {
+    transform: translate(-50%, 0); /* Para no centro */
+    opacity: 0.8;
   }
-  
-  @media (max-width: 480px) {
-    .bg > div {
-      width: 100%; /* Em telas menores, o círculo ocupa 90% da largura */
-      height: 70%; /* Aumenta a altura do círculo */
-      transform: scale(1); /* Ajusta para escala mais apropriada */
-    }
+}
+
+/* SOBRE NÓS */
+.container {
+  position: relative;
+  margin-top: 100vh;
+  width: 100%;
+  padding: 2rem;
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo */
+  align-items: center;
+}
+
+.sobre-nos {
+  display: flex;
+  justify-content: center; /* Alinha o conteúdo centralizado */
+  align-items: flex-start;
+  gap: 3rem; /* Espaçamento entre as colunas */
+  width: 100%; /* Limita a largura total da seção */
+  max-width: 1200px; /* Impede que o conteúdo ultrapasse 1200px */
+}
+
+.sobre-nos-left {
+  margin-top: 22%;
+}
+
+.sobre-nos-left, .sobre-nos-right {
+  width: 50%; /* Ajuste da largura das colunas */
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Alinha o conteúdo centralizado */
+}
+
+.sobre-nos-left h1, .sobre-nos-right h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333; /* Cor mais suave */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 600; /* Deixa o título mais forte */
+  padding-bottom: 0.5rem; /* Espaço entre o título e a linha */
+  display: inline-block; /* Faz o título se ajustar ao tamanho do texto */
+  position: relative; /* Necessário para o pseudo-elemento */
+}
+
+.sobre-nos-left h1::after, .sobre-nos-right h1::after {
+  content: "";
+  display: block;
+  width: 60px; /* Tamanho da linha */
+  height: 3px; /* Espessura da linha */
+  background-color: #fad505; /* Cor da linha */
+  position: absolute;
+  bottom: 0; /* Posiciona a linha abaixo do título */
+  left: 50%; /* Move para o centro do título */
+  transform: translateX(-50%); /* Ajusta para centralizar completamente */
+}
+
+.sobre-nos-left p, .sobre-nos-right p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #1b1919; /* Cor inicial do texto */
+  text-align: justify;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+}
+
+.sobre-nos-left p:hover, .sobre-nos-right p:hover {
+  color: #73836f; /* Cor de destaque ao passar o mouse */
+  transform: translateY(-5px); /* Move ligeiramente para cima */
+  cursor: pointer; /* Muda o cursor para indicar interatividade */
+}
+
+.sobre-nos-left p {
+  text-align: center;
+}
+
+.titulo-servico {
+  color: #304741; /* Cor desejada para os títulos (palavras antes do : ) */
+  font-weight: bold; /* Se desejar destacar mais */
+  margin-right: 0.3rem;
+}
+
+
+@media (max-width: 768px) {
+  .sobre-nos {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
   }
-  
-  @keyframes onloadbgt {
-    0% {
-      top: -50%;
-      opacity: 0.3;
-    }
-    100% {
-      top: 0%;
-      opacity: 0.8;
-    }
+
+  .sobre-nos-left, .sobre-nos-right {
+    width: 80%; /* Aumenta a largura em dispositivos menores */
   }
-  
-  @keyframes onloadbgb {
-    0% {
-      bottom: -50%;
-      opacity: 0.3;
-    }
-    100% {
-      bottom: 0%;
-      opacity: 0.8;
-    }
+
+  .sobre-nos-left h1, .sobre-nos-right h1 {
+    font-size: 2rem; /* Ajusta o tamanho do título */
   }
-  
+}
+
+/* PLANOS */
+.container-planos {
+  position: relative;
+  width: 100%;
+  padding: 2rem;
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.pricing-info {
+  flex: 1;
+  max-width: 50%;
+  text-align: left;
+}
+
+.pricing-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.toggle-button {
+  padding: 10px 20px;
+  border: none;
+  background: #ffc4b3;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-button.active {
+  background: #ff7961;
+}
+
+.toggle-button .discount {
+  background: #ff7961;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 5px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.pricing-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.pricing-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center; /* Centraliza os cards horizontalmente */
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+}
+
+.card {
+  background: #fceceb;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+  width: 280px; /* Mantém a largura estreita */
+  height: 500px;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Adiciona um efeito de elevação ao passar o mouse */
+}
+
+.card.agency {
+  margin-top: -20px; 
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  color: #fff;
+  height: 540px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  text-align: left; /* Alinha os tópicos à esquerda */
+}
+
+.card-features li {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.card-price {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-price span {
+  font-size: 16px;
+  color: #666;
+}
+
+.purchase-button {
+  background: #ff7961;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.purchase-button:hover {
+  background: #e85c50;
+}
