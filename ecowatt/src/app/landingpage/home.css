@@ -302,7 +302,6 @@ svg.filters {
 .container-planos {
   position: relative;
   width: 100%;
-  padding: 2rem;
   background-color: white;
   color: black;
   min-height: 100vh;
@@ -362,9 +361,9 @@ svg.filters {
 }
 
 .pricing-description {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
-  color: #666;
+  color: black;
 }
 
 .pricing-cards {
@@ -374,7 +373,7 @@ svg.filters {
 }
 
 .card {
-  background: #fceceb;
+  background: #f7f5f4;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -389,7 +388,8 @@ svg.filters {
 
 .card.agency {
   margin-top: -20px; 
-  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  /*background: linear-gradient(95deg, #23494a, #bfffc7);*/
+  background: linear-gradient(135deg, #20554b, #708f96, #daf1de);
   color: #fff;
   height: 540px;
 }
@@ -400,7 +400,7 @@ svg.filters {
   margin-bottom: 15px;
 }
 
-.card-features {
+.card-features, .card-features-plus {
   list-style: none;
   padding: 0;
   margin: 0 0 20px 0;
@@ -410,13 +410,21 @@ svg.filters {
 .card-features li {
   font-size: 14px;
   color: #666;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.card-price {
-  font-size: 28px;
+.card-features-plus li {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+
+.card-price, .card-price-plus {
+  font-size: 35px;
   font-weight: bold;
-  margin-bottom: 10px;
+  padding: 38px 0;
+  margin-bottom: -25px;
 }
 
 .card-price span {
@@ -424,16 +432,126 @@ svg.filters {
   color: #666;
 }
 
+.card-price-plus span{
+  font-size: 16px;
+  color: #666;
+}
+
 .purchase-button {
-  background: #ff7961;
+  background: linear-gradient(135deg, #20554b, #708f96, #daf1de);
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px 40px;
   cursor: pointer;
   font-size: 14px;
+  margin-top: -20px;
+  font-weight: bold;
 }
 
 .purchase-button:hover {
-  background: #e85c50;
+  background: #f1e8e4;
+  color: #666;
+}
+
+.purchase-button-plus {
+  background: #f1e8e4;
+  color: #666;
+  border: none;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: -20px;
+  font-weight: bold;
+}
+
+.purchase-button-plus:hover {
+  background: linear-gradient(135deg, #20554b, #708f96, #daf1de);
+  color: white;
+}
+
+/* PARCEIROS */
+
+.container-parceiro {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  height: auto;
+}
+
+.container-parceiro h2 {
+  text-align: center;
+  font-size: 36px; /* Tamanho maior para o título */
+  font-weight: 300; /* Deixa o texto mais fino (mais leve) */
+  letter-spacing: 1px; /* Aumenta o espaçamento entre as letras */
+  text-transform: uppercase; /* Transforma o texto em maiúsculas (capslock) */
+  
+}
+
+.container-parceiro p {
+  font-size: 1.1rem;
+  line-height: 1.6; /* Maior espaçamento entre as linhas para melhor legibilidade */
+  max-width: 800px; /* Define a largura máxima para o parágrafo */
+  margin: 0 auto 30px auto; /* Centraliza o parágrafo e dá um espaçamento inferior */
+  padding: 0 15px; /* Espaçamento nas laterais do parágrafo */
+  text-align: center;
+}
+
+.slider {
+  margin-top: 40px; /* Espaço entre o parágrafo e o slider */
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+/* Styling */
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 960px;
+}
+
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+
+.slide {
+  height: 100px;
+  width: 250px;
 }

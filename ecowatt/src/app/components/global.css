@@ -16,7 +16,9 @@
   /* Logo */
   .navbar-logo {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 300;
+    line-height: 1.5px;
+    text-transform: uppercase;
   }
   
   /* Links */
@@ -38,7 +40,7 @@
   }
   
   .navbar-links a:hover {
-    color: #f0d000; /* Cor de destaque ao passar o mouse */
+    color: #dae6e0 ; 
   }
   
   /* Estilo do menu de hambúrguer para telas menores */
@@ -132,3 +134,80 @@
     }
   }
   
+/* RODAPÉ */
+
+/* Estilos do rodapé */
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: #202c27;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column; /* Alinha os itens em coluna */
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo h3 {
+  font-size: 2rem;
+  line-height: 1.5px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 30px; 
+}
+
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.footer-links a:hover {
+  color: #dae6e0 ; 
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links ul {
+    margin-top: 10px;
+  }
+
+  .footer-links li {
+    margin: 5px 0;
+  }
+}
