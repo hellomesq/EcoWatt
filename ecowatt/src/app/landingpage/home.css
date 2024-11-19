@@ -1,19 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
-}
-
-html,
-body {
-  height: 100%;
-  overflow-x: hidden;
-}
-
-body {
+.banner-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -22,10 +9,20 @@ body {
   margin: 0;
   font-family: Poppins;
   background: rgb(58, 68, 58);
-
   font-size: calc(var(--_size) * 0.022);
+
   --_factor: min(1000px, 100vh);
   --_size: min(var(--_factor), 100vw);
+
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.banner-container * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 svg.filters {
@@ -123,16 +120,13 @@ svg.filters {
 .bg>div {
   position: absolute;
   width: 50%;
-  /* Ajustado para ocupar 50% da largura inicialmente */
   height: 100%;
-  /* Ajustado para ocupar 50% da altura inicialmente */
   border-radius: 50%;
   box-shadow: inset 0 0 4em 3em rgba(238, 200, 175, 0.2), inset 0 0 2em 0.4em rgba(238, 200, 175, 0.2),
     0 0 0.1em 0.1em rgba(238, 200, 175, 0.2), 0 0 1em 0.4em rgba(238, 200, 175, 0.3);
   opacity: 0.6;
   transform: scale(1.2);
   animation: onloadbgt 2.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
-
 }
 
 .bg>div:nth-child(1) {
@@ -150,47 +144,41 @@ svg.filters {
   animation: onloadbgb 2.5s ease-out forwards;
   will-change: transform, opacity;
 }
-/* Ajuste para telas menores */
+
 @media (max-width: 768px) {
   .bg>div {
     width: 50%;
-    /* Aumenta o tamanho do círculo para 70% da tela em tablets */
     height: 80%;
-    /* Aumenta a altura do círculo */
     transform: scale(1);
-    /* Ajusta a escala para manter a proporção */
   }
 }
 
 @media (max-width: 480px) {
   .bg>div {
     width: 100%;
-    /* Em telas menores, o círculo ocupa 90% da largura */
     height: 70%;
-    /* Aumenta a altura do círculo */
     transform: scale(1);
-    /* Ajusta para escala mais apropriada */
   }
 }
 
 @keyframes onloadbgt {
   0% {
-    transform: translate(-50%, -150%); /* Sobe de fora da tela */
+    transform: translate(-50%, -150%); 
     opacity: 0.3;
   }
   100% {
-    transform: translate(-50%, 0); /* Para no centro */
+    transform: translate(-50%, 0); 
     opacity: 0.8;
   }
 }
 
 @keyframes onloadbgb {
   0% {
-    transform: translate(-50%, 150%); /* Desce de fora da tela */
+    transform: translate(-50%, 150%);
     opacity: 0.3;
   }
   100% {
-    transform: translate(-50%, 0); /* Para no centro */
+    transform: translate(-50%, 0); 
     opacity: 0.8;
   }
 }
@@ -206,17 +194,17 @@ svg.filters {
   min-height: 100vh;
   height: auto;
   display: flex;
-  justify-content: center; /* Centraliza o conteúdo */
+  justify-content: center;
   align-items: center;
 }
 
 .sobre-nos {
   display: flex;
-  justify-content: center; /* Alinha o conteúdo centralizado */
+  justify-content: center;
   align-items: flex-start;
-  gap: 3rem; /* Espaçamento entre as colunas */
-  width: 100%; /* Limita a largura total da seção */
-  max-width: 1200px; /* Impede que o conteúdo ultrapasse 1200px */
+  gap: 3rem;
+  width: 100%; 
+  max-width: 1200px; 
 }
 
 .sobre-nos-left {
@@ -224,50 +212,50 @@ svg.filters {
 }
 
 .sobre-nos-left, .sobre-nos-right {
-  width: 50%; /* Ajuste da largura das colunas */
+  width: 50%; 
   display: flex;
   flex-direction: column;
-  text-align: center; /* Alinha o conteúdo centralizado */
+  text-align: center;
 }
 
 .sobre-nos-left h1, .sobre-nos-right h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #333; /* Cor mais suave */
+  color: #333; 
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
   letter-spacing: 4px;
-  font-weight: 600; /* Deixa o título mais forte */
-  padding-bottom: 0.5rem; /* Espaço entre o título e a linha */
-  display: inline-block; /* Faz o título se ajustar ao tamanho do texto */
-  position: relative; /* Necessário para o pseudo-elemento */
+  font-weight: 600; 
+  padding-bottom: 0.5rem; 
+  display: inline-block; 
+  position: relative; 
 }
 
 .sobre-nos-left h1::after, .sobre-nos-right h1::after {
   content: "";
   display: block;
-  width: 60px; /* Tamanho da linha */
-  height: 3px; /* Espessura da linha */
-  background-color: #fad505; /* Cor da linha */
+  width: 60px; 
+  height: 3px;
+  background-color: #fad505; 
   position: absolute;
-  bottom: 0; /* Posiciona a linha abaixo do título */
-  left: 50%; /* Move para o centro do título */
-  transform: translateX(-50%); /* Ajusta para centralizar completamente */
+  bottom: 0; 
+  left: 50%;
+  transform: translateX(-50%); 
 }
 
 .sobre-nos-left p, .sobre-nos-right p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #1b1919; /* Cor inicial do texto */
+  color: #1b1919; 
   text-align: justify;
   margin-bottom: 1rem;
-  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+  transition: all 0.3s ease; 
 }
 
 .sobre-nos-left p:hover, .sobre-nos-right p:hover {
-  color: #73836f; /* Cor de destaque ao passar o mouse */
-  transform: translateY(-5px); /* Move ligeiramente para cima */
-  cursor: pointer; /* Muda o cursor para indicar interatividade */
+  color: #73836f; 
+  transform: translateY(-5px); 
+  cursor: pointer; 
 }
 
 .sobre-nos-left p {
@@ -275,11 +263,10 @@ svg.filters {
 }
 
 .titulo-servico {
-  color: #304741; /* Cor desejada para os títulos (palavras antes do : ) */
-  font-weight: bold; /* Se desejar destacar mais */
+  color: #304741; 
+  font-weight: bold; 
   margin-right: 0.3rem;
 }
-
 
 @media (max-width: 768px) {
   .sobre-nos {
@@ -290,11 +277,11 @@ svg.filters {
   }
 
   .sobre-nos-left, .sobre-nos-right {
-    width: 80%; /* Aumenta a largura em dispositivos menores */
+    width: 80%; 
   }
 
   .sobre-nos-left h1, .sobre-nos-right h1 {
-    font-size: 2rem; /* Ajusta o tamanho do título */
+    font-size: 2rem; 
   }
 }
 
@@ -368,8 +355,8 @@ svg.filters {
 
 .pricing-cards {
   display: flex;
-  justify-content: center; /* Centraliza os cards horizontalmente */
-  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+  justify-content: center; 
+  flex-wrap: wrap; 
 }
 
 .card {
@@ -378,12 +365,12 @@ svg.filters {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s;
-  width: 280px; /* Mantém a largura estreita */
+  width: 280px; 
   height: 500px;
 }
 
 .card:hover {
-  transform: translateY(-10px); /* Adiciona um efeito de elevação ao passar o mouse */
+  transform: translateY(-10px); 
 }
 
 .card.agency {
@@ -404,7 +391,7 @@ svg.filters {
   list-style: none;
   padding: 0;
   margin: 0 0 20px 0;
-  text-align: left; /* Alinha os tópicos à esquerda */
+  text-align: left; 
 }
 
 .card-features li {
@@ -483,26 +470,24 @@ svg.filters {
 
 .container-parceiro h2 {
   text-align: center;
-  font-size: 36px; /* Tamanho maior para o título */
-  font-weight: 300; /* Deixa o texto mais fino (mais leve) */
-  letter-spacing: 1px; /* Aumenta o espaçamento entre as letras */
-  text-transform: uppercase; /* Transforma o texto em maiúsculas (capslock) */
-  
+  font-size: 36px; 
+  font-weight: 300; 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
 }
 
 .container-parceiro p {
   font-size: 1.1rem;
-  line-height: 1.6; /* Maior espaçamento entre as linhas para melhor legibilidade */
-  max-width: 800px; /* Define a largura máxima para o parágrafo */
-  margin: 0 auto 30px auto; /* Centraliza o parágrafo e dá um espaçamento inferior */
-  padding: 0 15px; /* Espaçamento nas laterais do parágrafo */
+  line-height: 1.6; 
+  max-width: 800px;
+  margin: 0 auto 30px auto; 
+  padding: 0 15px; 
   text-align: center;
 }
 
 .slider {
-  margin-top: 40px; /* Espaço entre o parágrafo e o slider */
+  margin-top: 40px; 
 }
-
 
 @keyframes scroll {
   0% {
@@ -513,7 +498,7 @@ svg.filters {
   }
 }
 
-/* Styling */
+/* Slide */
 .slider {
   background: white;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);

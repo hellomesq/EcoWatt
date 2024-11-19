@@ -3,7 +3,7 @@ import './home.css';
 
 const Banner: React.FC = () => {
   return (
-    <div>
+    <div className="banner-container">
       <div className="bg">
         <div></div>
         <div></div>

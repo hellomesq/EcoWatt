@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import './global.css';
 
 const Navbar: React.FC = () => {
@@ -20,7 +21,7 @@ const Navbar: React.FC = () => {
         <li><a href="#home">Início</a></li>
         <li><a href="#services">Sobre</a></li>
         <li><a href="#about">Monitoramento</a></li>
-        <li><a href="#contact">Entrar</a></li>
+        <li><Link to="/registro">Entrar</Link></li>
       </ul>
 
       {/* Botão de toggle para o menu */}

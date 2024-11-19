@@ -1,142 +1,145 @@
-/* Estilo básico da navbar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
 .navbar {
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #202c27;
+  color: white;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5px;
+  text-transform: uppercase;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin-left: auto;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-links a:hover {
+  color: #dae6e0;
+}
+
+/* NAVBAR RESPONSIVA */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-toggle span {
+  background: white;
+  height: 2px;
+  margin: 4px;
+  width: 25px;
+  transition: 0.3s;
+}
+
+.navbar-toggle .close-icon {
+  background: none;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-family: sans-serif;
+  padding: 10px;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    height: 100vh;
+    background-color: #202c27;
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .navbar-links li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    z-index: 1002;
+  }
+
+  .navbar-toggle span {
+    display: block;
+  }
+
+  .overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #202c27;
-    color: white;
-    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
   }
-  
-  /* Logo */
-  .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: 300;
-    line-height: 1.5px;
-    text-transform: uppercase;
+
+  .overlay.active {
+    display: block;
   }
-  
-  /* Links */
-  .navbar-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin-left: auto; /* Para garantir que a lista de links seja empurrada para a direita */
-  }
-  
-  .navbar-links li {
-    list-style: none;
-  }
-  
-  .navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  
-  .navbar-links a:hover {
-    color: #dae6e0 ; 
-  }
-  
-  /* Estilo do menu de hambúrguer para telas menores */
-  .navbar-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  
-  .navbar-toggle span {
-    background: white;
-    height: 2px;
-    margin: 4px;
-    width: 25px;
-    transition: 0.3s;
-  }
-  
-  /* Estilo do "X" quando o menu está aberto */
-  .navbar-toggle .close-icon {
-    background: none;
-    font-size: 2rem;
-    color: white;
-    font-weight: bold;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-family: sans-serif;
-    padding: 10px;
-    z-index: 1001; /* Coloca o "X" acima de tudo */
-  }
-  
- /* Responsividade */
-@media (max-width: 768px) {
-    /* Ajuste para o menu ocupar 50% da largura da tela e ficar à direita */
-    .navbar-links {
-      display: none; /* Esconde os links por padrão */
-      flex-direction: column;
-      width: 70%; /* Define a largura do menu para 70% */
-      height: 100vh; /* Agora o menu ocupa toda a altura da tela */
-      background-color: #202c27;
-      margin-top: 0;
-      position: fixed;
-      top: 0;
-      right: 0; /* Posiciona o menu à direita */
-      justify-content: center; /* Centraliza os itens verticalmente */
-      align-items: center; /* Centraliza os itens horizontalmente */
-      z-index: 1000; /* Garante que o menu fique acima de outros elementos */
-    }
-  
-    /* Ajusta os itens de lista para centralizar o texto */
-    .navbar-links li {
-      display: flex; 
-      justify-content: center; /* Centraliza o conteúdo dentro de cada item */
-      align-items: center; /* Centraliza o texto verticalmente */
-      width: 100%; /* Garante que os itens da lista ocupem toda a largura */
-      text-align: center; /* Alinha o texto ao centro */
-      padding: 10px 0; /* Adiciona algum espaçamento entre os itens */
-    }
-  
-    /* Exibe o menu quando ativado */
-    .navbar-links.active {
-      display: flex;
-    }
-  
-    /* Exibe o ícone do menu de hambúrguer */
-    .navbar-toggle {
-      display: flex;
-      z-index: 1002; /* Garante que o toggle fique acima do menu */
-    }
-  
-    /* Esconde as linhas do ícone de hambúrguer quando o menu estiver aberto */
-    .navbar-toggle span {
-      display: block;
-    }
-  
-    /* Camada de sobreposição */
-    .overlay {
-      display: none; /* Inicialmente escondido */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.5); /* Cor escura com opacidade */
-      z-index: 999; /* Fica atrás do menu */
-    }
-  
-    /* Exibe a sobreposição quando o menu estiver aberto */
-    .overlay.active {
-      display: block; /* Torna a sobreposição visível */
-    }
-  }
-  
+}
+
 /* RODAPÉ */
 
-/* Estilos do rodapé */
 .footer {
   position: relative;
   width: 100%;
@@ -149,7 +152,7 @@
 
 .footer-container {
   display: flex;
-  flex-direction: column; /* Alinha os itens em coluna */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 1200px;
@@ -163,7 +166,7 @@
   font-weight: 300;
   text-transform: uppercase;
   margin: 0;
-  padding-bottom: 30px; 
+  padding-bottom: 30px;
 }
 
 .footer-links ul {
@@ -184,7 +187,7 @@
 }
 
 .footer-links a:hover {
-  color: #dae6e0 ; 
+  color: #dae6e0;
 }
 
 .footer-bottom {
@@ -196,7 +199,6 @@
   margin: 0;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;

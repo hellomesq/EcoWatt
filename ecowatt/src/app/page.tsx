@@ -1,7 +1,7 @@
-'use client'; // Adicione isso no topo do arquivo
+'use client';
 
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'; 
 import Navbar from './components/Navbar';
 import Banner from './landingpage/Banner';
 import SobreNos from './landingpage/Sobre';
@@ -9,6 +9,8 @@ import Planos from './landingpage/Planos';
 import 'font-awesome/css/font-awesome.min.css';
 import Parceiro from './landingpage/Parceiros';
 import Rodape from './components/Rodapé';
+import Principal from './registro/Principal';
+
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -18,7 +20,7 @@ export default function Home() {
   }, []);
 
   if (!isClient) {
-    return null; // Não renderiza nada no servidor
+    return null; 
   }
 
   return (
@@ -33,11 +35,19 @@ export default function Home() {
               <SobreNos />
               <Planos />
               <Parceiro />
-              <Rodape />
+            </>
+          }
+        />
+         <Route
+          path="/registro"
+          element={
+            <>
+              <Principal />
             </>
           }
         />
       </Routes>
+      <Rodape />
     </Router>
   );
 }
