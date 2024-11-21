@@ -11,6 +11,7 @@ import Parceiro from './landingpage/Parceiros';
 import Rodape from './components/Rodapé';
 import Principal from './registro/Principal';
 import Dashboard from './dashboard/Dashboard';
+import Premium from './dashboard/Premium';
 
 
 export default function Home() {
@@ -49,7 +50,7 @@ export default function Home() {
           }
         />
         <Route
-          path="/dashboard"
+          path="/dashboard/*"
           element={
             <>
               <Dashboard />

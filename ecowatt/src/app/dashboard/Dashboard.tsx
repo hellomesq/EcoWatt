@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import getCarbonIntensity from '../api/co2';
+import React from 'react';
+import { Link, Routes, Route, useLocation } from 'react-router-dom';
 import './dashboard.css';
+import Premium from './Premium';
+import Monitoring from './Monitoramento';
 
 const Dashboard: React.FC = () => {
-  const [carbonData, setCarbonData] = useState<any>(null);
+  const location = useLocation();
 
-  useEffect(() => {
-    const fetchCarbonData = async () => {
-      try {
-        const data = await getCarbonIntensity('BR-NE'); // Usando 'DE' para a Alemanha como exemplo
-        setCarbonData(data);
-      } catch (error) {
-        console.error('Erro ao carregar dados de intensidade de carbono', error);
-      }
-    };
-    fetchCarbonData();
-  }, []);
+  // Verifica se está na rota Premium
+  const isPremiumPage = location.pathname === '/dashboard/premium';
 
   return (
     <div className="dashboard-container">
@@ -25,33 +18,34 @@ const Dashboard: React.FC = () => {
       <div className="dashboard-content">
         <aside className="sidebar-dashboard">
           <nav className="menu-dashboard">
-            <a href="/" className="menu-item">Início</a>
-            <a href="/dashboard" className="menu-item">Monitoramento</a>
-            <a href="/" className="menu-item">Alterar perfil</a>
-            <a href="/" className="menu-item">Sair</a>
+            <Link to="/" className="menu-item">Início</Link>
+            <Link to="/dashboard" className="menu-item">Monitoramento</Link>
+            <Link to="/" className="menu-item">Alterar perfil</Link>
+            <Link to="/" className="menu-item">Sair</Link>
           </nav>
         </aside>
         <main className="main-section">
           <div className="welcome">
             <h2>Bem-vindo ao seu perfil de monitoramento, helo!</h2>
+            <ul className="welcome-list">
+              <li><Link to="/dashboard" className="welcome-item">Análises</Link></li>
+              <li><Link to="/dashboard" className="welcome-item">Dicas</Link></li>
+              <li><Link to="/dashboard/premium" className="welcome-item">Premium</Link></li>
+            </ul>
           </div>
-          <section className="content-dashboard">
-            {carbonData ? (
-              <div>
-                <h3>Intensidade de Carbono Atual</h3>
-                <p><strong>Zona:</strong> {carbonData.zone}</p>
-                <p><strong>Intensidade de Carbono:</strong> {carbonData.carbonIntensity} gCO2eq/kWh</p>
-                <p><strong>Data:</strong> {new Date(carbonData.datetime).toLocaleString()}</p>
-                <p><strong>Status da Intensidade:</strong> {carbonData.intensityStatus}</p>
-                <p><strong>Porcentagem de Energia Renovável:</strong> {carbonData.renewablePercentage}%</p>
-                <p><strong>Porcentagem de Energia Sem Fósseis:</strong> {carbonData.fossilFreePercentage}%</p>
-                <p><strong>Consumo Total de Energia:</strong> {carbonData.powerConsumptionTotal} MW</p>
-                <p><strong>Produção Total de Energia:</strong> {carbonData.powerProductionTotal} MW</p>
-              </div>
-            ) : (
-              <p>Carregando dados de intensidade de carbono...</p>
-            )}
-          </section>
+          {!isPremiumPage && ( // Só exibe o container para outras páginas
+            <section className="content-dashboard">
+              <Routes>
+                <Route path="/" element={<Monitoring />} />
+                <Route path="premium" element={<Premium />} />
+              </Routes>
+            </section>
+          )}
+          {isPremiumPage && ( // Página Premium, sem o container
+            <Routes>
+              <Route path="premium" element={<Premium />} />
+            </Routes>
+          )}
         </main>
       </div>
     </div>

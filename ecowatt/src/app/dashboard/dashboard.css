@@ -3,13 +3,13 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 55px; 
+    height: 55px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; 
-    background-color: rgba(60, 71, 71, 0.7); 
-    backdrop-filter: blur(10px); 
+    padding: 0 20px;
+    background-color: rgba(60, 71, 71, 0.7);
+    backdrop-filter: blur(10px);
     color: white;
     z-index: 1000;
 }
@@ -26,42 +26,79 @@
     gap: 20px;
     list-style: none;
     margin-left: auto;
-    padding: 0; 
+    padding: 0;
 }
 
 .dashboard-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o layout ocupe toda a altura da tela */
+    min-height: 100vh;
+    /* Garante que o layout ocupe toda a altura da tela */
     background-color: #f5f5f5;
-  }
-  
-  .dashboard-content {
+}
+
+.dashboard-content {
     display: flex;
     flex-grow: 1;
-    margin-top: 70px; /* Espaço para o cabeçalho */
-   /* margin-bottom: 20px;  Espaço antes do rodapé */
-  }
-  
-  .sidebar-dashboard {
-    position: sticky; 
-    top: 70px; 
+    margin-top: 70px;
+    /* Espaço para o cabeçalho */
+    /* margin-bottom: 20px;  Espaço antes do rodapé */
+}
+
+.sidebar-dashboard {
+    position: sticky;
+    top: 70px;
     margin-left: 20px;
     box-sizing: border-box;
     width: 155px;
-    max-height: calc(100vh - 90px); 
+    max-height: calc(100vh - 90px);
     background: rgba(49, 82, 68, 0.705);
-    backdrop-filter: blur(10px); /* Adiciona um leve desfoque ao fundo (opcional) */
+    backdrop-filter: blur(10px);
+    /* Adiciona um leve desfoque ao fundo (opcional) */
     padding: 15px;
-    border-radius: 10px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    z-index: 1; 
-  }
-  
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
 .menu-dashboard {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.welcome-list {
+    display: flex;
+    /* Coloca os itens lado a lado */
+    list-style: none;
+    /* Remove os marcadores da lista */
+    padding: 0;
+    /* Remove o padding padrão */
+    margin: 1rem 0;
+    /* Adiciona um pouco de espaço ao redor da lista */
+    gap: 1.5rem;
+    /* Espaço entre os itens */
+}
+
+.welcome-list li {
+    display: flex;
+    /* Garante que o conteúdo interno se alinha adequadamente */
+    align-items: center;
+    /* Centraliza os itens verticalmente */
+}
+
+.welcome-item {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    color: rgb(237, 233, 233);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Animação suave para hover */
+}
+
+.welcome-item:hover {
+    color: #cacbcc;
+    /* Muda a cor no hover */
 }
 
 .menu-item {
@@ -80,13 +117,14 @@
 /* É a div geral */
 .main-section {
     flex-grow: 1;
-    margin-left: 20px; /* Espaçamento suficiente para o menu lateral */
+    margin-left: 20px;
+    /* Espaçamento suficiente para o menu lateral */
     box-sizing: border-box;
-    background-color: #f5f5f5; 
+    background-color: #f5f5f5;
     min-height: calc(100vh - 55px);
     overflow-y: auto;
-  }
-  
+}
+
 
 /* Div das boas-vindas*/
 .welcome {
@@ -95,13 +133,13 @@
     /*background: linear-gradient(180deg, #2A363B, #C0B697);*/
     /*background-color: rgba(130, 148, 148, 0.39);*/
     color: white;
-    padding: 50px; 
+    padding: 50px;
     width: 98%;
     border-radius: 10px;
 }
 
 .welcome h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin: 0 0 10px;
     font-weight: 300;
 }
@@ -138,6 +176,28 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: -15px;
     width: 30%;
-    margin-left:3%;
+    margin-left: 3%;
 
+}
+.premium-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.premium-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #313131;
+}
+
+.premium-container p {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
 }
