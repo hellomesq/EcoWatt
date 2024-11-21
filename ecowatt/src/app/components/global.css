@@ -22,7 +22,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #202c27;
+  background-color: rgba(60, 71, 71, 0.7); /* Fundo semi-transparente */
+  backdrop-filter: blur(10px); /* Adiciona um leve desfoque ao fundo (opcional) */
   color: white;
   z-index: 1000;
   padding: 20px;
@@ -141,58 +142,57 @@ body {
 /* RODAPÉ */
 
 .footer {
-  position: relative;
+  position: relative; /* Garante que o rodapé fique no fluxo natural da página */
   width: 100%;
+  /*background-color: rgb(38, 44, 44); */
   background-color: #202c27;
   color: white;
-  padding: 50px 0;
+  padding: 20px 15px; 
   text-align: center;
   font-family: Arial, sans-serif;
+  margin-top: auto; /* Faz com que o rodapé só seja exibido após o conteúdo */
+  z-index: 0; /* Mantém o rodapé abaixo do menu lateral */
 }
 
+
 .footer-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
 }
 
 .footer-logo h3 {
-  font-size: 2rem;
-  line-height: 1.5px;
+  font-size: 1.5rem; 
   font-weight: 300;
   text-transform: uppercase;
-  margin: 0;
-  padding-bottom: 30px;
+  color: white;
 }
 
 .footer-links ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin: 5px 0;
+  display: flex;
+  gap: 10px; 
 }
 
 .footer-links a {
   text-decoration: none;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
+  color: #ffffffcc;
+  font-size: 0.9rem; 
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #dae6e0;
+  color: #9cb9b4;
 }
 
 .footer-bottom {
-  margin-top: 20px;
-  font-size: 0.9rem;
+  margin-top: 10px; 
+  font-size: 0.8rem; 
+  color: #b2bec3;
 }
 
 .footer-bottom p {
@@ -201,15 +201,16 @@ body {
 
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column;
-    text-align: center;
+    gap: 8px; 
   }
 
   .footer-links ul {
-    margin-top: 10px;
+    flex-direction: column;
+    gap: 5px;
   }
 
-  .footer-links li {
-    margin: 5px 0;
+  .footer-links a {
+    font-size: 0.8rem;
   }
+
 }

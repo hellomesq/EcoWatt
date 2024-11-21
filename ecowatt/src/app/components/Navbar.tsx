@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
       <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
         <li><a href="#home">Início</a></li>
         <li><a href="#services">Sobre</a></li>
-        <li><a href="#about">Monitoramento</a></li>
+        <li><Link to="/dashboard">Monitoramento</Link></li>
         <li><Link to="/registro">Entrar</Link></li>
       </ul>
 

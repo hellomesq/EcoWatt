@@ -33,32 +33,12 @@ const CadastroFinal: React.FC<CadastroFinalProps> = ({ onBack }) => {
       <div className="input-field">
         <i className="fas fa-lock"></i>
         <input type="text" placeholder="CPF" />
-        <i
-          className="fas fa-info-circle info-icon"
-          onMouseEnter={() => handleMouseEnter('cpf')}
-          onMouseLeave={() => handleMouseLeave('cpf')}
-        ></i>
-        {showInfo.cpf && (
-          <div className="info-popup">
-            <p>Digite seu CPF para termos controle de registro.</p>
-          </div>
-        )}
       </div>
 
       {/* Input de CEP */}
       <div className="input-field">
         <i className="fas fa-lock"></i>
         <input type="text" placeholder="CEP" />
-        <i
-          className="fas fa-info-circle info-icon"
-          onMouseEnter={() => handleMouseEnter('cep')}
-          onMouseLeave={() => handleMouseLeave('cep')}
-        ></i>
-        {showInfo.cep && (
-          <div className="info-popup">
-            <p>Digite seu CEP para conseguirmos fazer análises regionais</p>
-          </div>
-        )}
       </div>
 
       {/* Input de Imagem */}
@@ -78,7 +58,7 @@ const CadastroFinal: React.FC<CadastroFinalProps> = ({ onBack }) => {
         ></i>
         {showInfo.imagem && (
           <div className="info-popup">
-            <p>Para fazermos sua análise, é necessário pelo menos 3 contas de energia.</p>
+            <p>Para fazermos sua análise, é necessário pelo menos 3 contas de energia. Envie em formato PDF.</p>
           </div>
         )}
       </div>

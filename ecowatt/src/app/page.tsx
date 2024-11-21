@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'; 
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Banner from './landingpage/Banner';
 import SobreNos from './landingpage/Sobre';
@@ -10,6 +10,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import Parceiro from './landingpage/Parceiros';
 import Rodape from './components/Rodapé';
 import Principal from './registro/Principal';
+import Dashboard from './dashboard/Dashboard';
 
 
 export default function Home() {
@@ -20,17 +21,17 @@ export default function Home() {
   }, []);
 
   if (!isClient) {
-    return null; 
+    return null;
   }
 
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route
           path="/"
           element={
             <>
+              <Navbar />
               <Banner />
               <SobreNos />
               <Planos />
@@ -38,11 +39,20 @@ export default function Home() {
             </>
           }
         />
-         <Route
+        <Route
           path="/registro"
           element={
             <>
+              <Navbar />
               <Principal />
+            </>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <>
+              <Dashboard />
             </>
           }
         />
@@ -51,4 +61,3 @@ export default function Home() {
     </Router>
   );
 }
- 

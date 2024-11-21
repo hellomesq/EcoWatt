@@ -95,7 +95,6 @@ form.sign-in-form {
 .btn {
   width: 150px;
   background: linear-gradient(135deg, #20554b, #708f96, #daf1de);
-
   border: none;
   outline: none;
   height: 40px;
@@ -130,8 +129,8 @@ form.sign-in-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(95deg, #fdfde6 0%, #fafaef, #708f96 100%);
-
+  /*background-image: linear-gradient(95deg, #fdfde6 0%, #fafaef, #708f96 100%);*/
+  background: rgba(216, 205, 189, 0.705);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
@@ -163,7 +162,7 @@ form.sign-in-form {
 }
 
 .panel .content {
-  color: #fff;
+  color: #000000;
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
 }
@@ -182,11 +181,12 @@ form.sign-in-form {
 .btn.transparent {
   margin: 0;
   background: none;
-  border: 2px solid #fff;
+  border: 2px solid #666;
   width: 130px;
   height: 41px;
   font-weight: 600;
   font-size: 0.8rem;
+  color: black;
 }
 
 .right-panel .image,
@@ -235,6 +235,7 @@ form.sign-in-form {
 #imagem{
     font-size: 12px;
 }
+
 /* Popup Info */
 .info-icon {
     font-size: 1rem; /* Ajustando o tamanho do ícone */
