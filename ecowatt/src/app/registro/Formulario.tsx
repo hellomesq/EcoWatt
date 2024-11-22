@@ -39,8 +39,8 @@ const SurveyForm: React.FC = () => {
     return (
         <div className="survey-form-container">
             <div className="survey-header">
-                <h1>Product Survey Form</h1>
-                <p>We would love to hear your thoughts on how we can improve your experience.</p>
+                <h1>Participe do nosso formulário</h1>
+                <p>Compartilhe suas informações e nos ajude a criar dicas de economia personalizadas para o seu dia a dia.</p>
             </div>
             <div className="survey-form">
                 <form onSubmit={handleSubmit}>
@@ -53,16 +53,18 @@ const SurveyForm: React.FC = () => {
                     {/* Pergunta 1 */}
                     {currentQuestion === 1 && (
                         <div className="form-group">
-                            <h2>How long have you been using our product?</h2>
+                            <h2>Com que frequência você usa aparelhos eletrônicos de alto consumo (ex. ar condicionado, aquecedores, forno elétrico)?
+                            </h2>
                             <select
                                 name="question_1"
                                 value={formData.question_1}
                                 onChange={handleInputChange}
                             >
-                                <option value="">Select an option</option>
-                                <option value="Never">Never</option>
-                                <option value="Less than a year">Less than a year</option>
-                                <option value="More than a year">More than a year</option>
+                                <option value="">Selecione uma opção</option>
+                                <option value="Never">Diariamente</option>
+                                <option value="Less than a year">Algumas vezes por semana</option>
+                                <option value="More than a year">Raramente</option>
+                                <option value="More than a year">Quase nunca</option>
                             </select>
                         </div>
                     )}

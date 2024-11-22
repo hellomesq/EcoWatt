@@ -8,9 +8,9 @@ const Integrantes: React.FC = () => {
         <div className="title__int">
           <h2>
             CONHEÇA NOSSA EQUIPE <br />
-            <a href="https://github.com/hellomesq/InnoVisionNexus">
+            <a href="https://github.com/hellomesq/EcoWatt">
               <i className="fa-brands fa-github"></i>
-              github.com/hellomesq/InnoVisionNexus
+              github.com/hellomesq/EcoWatt
             </a>
           </h2>
         </div>
@@ -22,8 +22,8 @@ const Integrantes: React.FC = () => {
                 <div className="details">
                   <p className="name">Hellen Marinho Cordeiro</p>
                   <p className="rm">RM: 558841</p>
-                  <p><a href="https://github.com/GuLopes14" className="github-link">github.com/GuLopes14</a></p>
-                  <p><a href="https://github.com/hellomesq" className="github-link">hellenmarinho</a></p>
+                  <p><a href="https://github.com/hmarinhoo" className="github-link">github.com/hmarinhoo</a></p>
+                  <p><a href="https://www.linkedin.com/in/hellen-marinho-9158b5301/" className="github-link">hellenmarinho</a></p>
                 </div>
               </div>
               <div className="profile-column">
@@ -32,16 +32,16 @@ const Integrantes: React.FC = () => {
                   <p className="name">Heloisa Alves de Mesquita</p>
                   <p className="rm">RM: 559145</p>
                   <p><a href="https://github.com/hellomesq" className="github-link">github.com/hellomesq</a></p>
-                  <p><a href="https://github.com/hellomesq" className="github-link">heloalvess</a></p>
+                  <p><a href="https://www.linkedin.com/in/heloalvess" className="github-link">heloalvess</a></p>
                 </div>
               </div>
               <div className="profile-column">
                 <img loading="lazy" src="../imagens/joao.png" alt="Profile image of João Gabriel Silva Oliveira" className="profile-image" />
                 <div className="details">
-                  <p className="name">João Gabriel Silva Oliveira</p>
+                  <p className="name">Júlia Soares Farias dos Santos</p>
                   <p className="rm">RM: 555308</p>
-                  <p><a href="https://github.com/JoaoGabrielSilvaOliveiraa" className="github-link">github.com/JoaoGabrielSilvaOliveiraa</a></p>
-                  <p><a href="https://github.com/hellomesq" className="github-link">juliafarias</a></p>
+                  <p><a href="https://github.com/jyx97" className="github-link">github.com/jyx97</a></p>
+                  <p><a href="https://www.linkedin.com/in/júlia-farias-701867325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" className="github-link">juliafarias</a></p>
                 </div>
               </div>
             </div>

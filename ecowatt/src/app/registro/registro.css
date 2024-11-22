@@ -431,15 +431,18 @@ form.sign-in-form {
 
 /* PAGAMENTO */
 
+
+.main-container{
+  height: 100vh;
+}
 .payment-page {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
-  margin-top: 80px; /* Compensa a navbar fixa */
-  margin-bottom: 60px; /* Espaço para o rodapé */
+  gap: 15px; /* Menor espaçamento entre seções */
+  padding: 15px; /* Reduz a área de preenchimento */
+  margin: 180px auto; /* Compensa a navbar fixa */
   font-family: Arial, sans-serif;
-  min-height: calc(100vh - 140px); /* Altura mínima para preencher a tela */
+  max-width: 1200px;
   background-color: #f9f9f9;
 }
 
@@ -448,80 +451,94 @@ form.sign-in-form {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
-  width: 48%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px; /* Reduz preenchimento interno */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form {
+  width: 75%; /* Mais proporcional ao layout */
+}
+
+.order-summary {
+  width: 25%; /* Ajusta espaço da lateral */
 }
 
 .payment-form h2,
 .order-summary h2 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
+  margin-bottom: 10px; /* Reduz espaçamento entre título e conteúdo */
+  font-size: 1.25rem; /* Fonte levemente menor */
   color: #333;
 }
 
 .payment-options {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 8px; /* Reduz espaçamento entre botões */
+  margin-bottom: 15px;
 }
 
 .payment-options button {
   flex: 1;
-  padding: 10px;
+  padding: 12px; /* Botões menores */
   border: 1px solid #ddd;
   background-color: #f9f9f9;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.3s ease;
+  margin-bottom: 12px;
 }
 
 .payment-options button:hover {
   background-color: #e0e0e0;
+  color: black;
 }
 
 .payment-options .active {
   background-color: #007bff;
   color: white;
-  border-color: #007bff;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom:0; /* Reduz espaço entre grupos */
+  width: 100%;
+  
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px; /* Menor espaçamento do rótulo */
   font-size: 0.9rem;
   color: #555;
 }
 
 .form-group input,
 .form-group select {
-  width: 100%;
-  padding: 10px;
+  box-sizing: border-box; /* Garante que padding e borda sejam incluídos no tamanho total */
+  width: 100%; /* Garante que o input ocupe a largura total do container pai */
+  max-width: 100%; /* Evita transbordar do container */
+  padding: 10px; /* Ajusta o preenchimento interno */
+  margin: 0; /* Remove margens que possam estar causando deslocamentos */
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 0.9rem;
   color: #333;
-  background-color: #fff;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   border-color: #007bff;
   outline: none;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.3);
 }
 
 .form-row {
   display: flex;
-  gap: 10px;
+  gap: 8px; /* Espaço consistente entre os inputs */
+  flex-wrap: wrap; /* Permite que os inputs que não cabem na linha sejam movidos para baixo */
 }
 
 .form-row .form-group {
-  flex: 1;
+  flex: 1; /* Garante que os inputs compartilhem o espaço igualmente */
+  min-width: 150px; /* Define um tamanho mínimo para inputs em telas pequenas */
 }
 
 .order-summary ul {
@@ -531,31 +548,32 @@ form.sign-in-form {
 }
 
 .order-summary ul li {
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Espaço menor entre itens */
   font-size: 0.9rem;
-  color: #555;
+  color: black;
 }
 
 .price h3 {
-  font-size: 2rem;
+  font-size: 1.5rem; /* Reduz tamanho da fonte */
   color: #007bff;
   margin-bottom: 5px;
 }
 
 .price p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem; /* Texto descritivo menor */
   color: gray;
 }
 
 .subscribe-button {
   width: 100%;
-  padding: 12px;
+  margin-top: 180px;
+  padding: 10px; /* Botão menor */
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.9rem; /* Reduz tamanho do texto */
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -568,12 +586,17 @@ form.sign-in-form {
 @media (max-width: 768px) {
   .payment-page {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px; /* Menor espaço entre blocos */
   }
 
   .payment-form,
   .order-summary {
     width: 100%;
+  }
+
+  .payment-form .form-row {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -582,12 +605,12 @@ form.sign-in-form {
 
 /* Main Container */
 .survey-form-container {
-  margin-top: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15%;
   font-family: 'Arial', sans-serif;
+  height: 100vh;
 }
 
 .survey-header {
@@ -596,17 +619,20 @@ form.sign-in-form {
 
 .survey-header h1 {
   font-size: 2rem;
+  text-align: center;
   color: #1D1D1D;
+  margin-bottom: 12px;
 }
 
 .survey-header p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #4F4F4F;
+  text-align: center;
 }
 
 /* Form Styling */
 .survey-form {
-  max-width: 500px; /* Define um tamanho fixo para o formulário */
+  max-width: 600px; /* Define um tamanho fixo para o formulário */
   padding: 20px;
   border: 1px solid #E1E1E1;
   border-radius: 8px;
@@ -616,9 +642,9 @@ form.sign-in-form {
 }
 
 .form-group {
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  width: 480px;
   height: 120px; /* Tamanho fixo das perguntas */
 }
 
@@ -649,10 +675,11 @@ select:focus {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  gap: 12px;
 }
 
 .prev-btn, .next-btn {
-  padding: 10px 20px;
+  padding: 10px 30px;
   font-size: 1rem;
   border: none;
   border-radius: 4px;
@@ -660,13 +687,15 @@ select:focus {
 }
 
 .prev-btn {
-  background-color: #FFCC00;
+  background-color: #c29f06;
   color: white;
+  font-weight: bold;
 }
 
 .next-btn {
-  background-color: #007BFF;
+  background-color: #5f8156;
   color: white;
+  font-weight: bold;
 }
 
 /* Progress Bar */
@@ -677,7 +706,7 @@ select:focus {
   border-radius: 5px;
   margin-bottom: 20px;
   position: absolute; /* Barra fixada no topo */
-  top: 0; /* Fixa no topo do formulário */
+  top: -40px; /* Fixa no topo do formulário */
 }
 
 .progress {
