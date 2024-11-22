@@ -431,28 +431,33 @@ form.sign-in-form {
 
 /* PAGAMENTO */
 
-/* Pagamento - Ajuste para Navbar e Footer */
 .payment-page {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   padding: 20px;
-  margin-top: 80px; /* Espaço para compensar a navbar fixa */
+  margin-top: 80px; /* Compensa a navbar fixa */
   margin-bottom: 60px; /* Espaço para o rodapé */
   font-family: Arial, sans-serif;
-  min-height: calc(100vh - 140px); /* Garante altura mínima da tela com navbar e rodapé */
+  min-height: calc(100vh - 140px); /* Altura mínima para preencher a tela */
+  background-color: #f9f9f9;
 }
 
-.payment-form, .order-summary {
+.payment-form,
+.order-summary {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
   width: 48%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.payment-form h2, .order-summary h2 {
+.payment-form h2,
+.order-summary h2 {
   margin-bottom: 20px;
   font-size: 1.5rem;
+  color: #333;
 }
 
 .payment-options {
@@ -462,15 +467,23 @@ form.sign-in-form {
 }
 
 .payment-options button {
-  padding: 10px 20px;
+  flex: 1;
+  padding: 10px;
   border: 1px solid #ddd;
   background-color: #f9f9f9;
   cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.payment-options button:hover {
+  background-color: #e0e0e0;
 }
 
 .payment-options .active {
   background-color: #007bff;
   color: white;
+  border-color: #007bff;
 }
 
 .form-group {
@@ -481,13 +494,25 @@ form.sign-in-form {
   display: block;
   margin-bottom: 5px;
   font-size: 0.9rem;
+  color: #555;
 }
 
-.form-group input, .form-group select {
+.form-group input,
+.form-group select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 0.9rem;
+  color: #333;
+  background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
 }
 
 .form-row {
@@ -495,35 +520,44 @@ form.sign-in-form {
   gap: 10px;
 }
 
+.form-row .form-group {
+  flex: 1;
+}
+
 .order-summary ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .order-summary ul li {
   margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #555;
 }
 
 .price h3 {
   font-size: 2rem;
   color: #007bff;
+  margin-bottom: 5px;
 }
 
 .price p {
-  margin-top: -10px;
+  margin: 0;
   font-size: 0.9rem;
   color: gray;
 }
 
 .subscribe-button {
   width: 100%;
-  padding: 10px 20px;
+  padding: 12px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .subscribe-button:hover {
@@ -537,10 +571,12 @@ form.sign-in-form {
     gap: 20px;
   }
 
-  .payment-form, .order-summary {
+  .payment-form,
+  .order-summary {
     width: 100%;
   }
 }
+
 
 /* FORMULARIO */
 

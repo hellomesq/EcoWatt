@@ -45,7 +45,6 @@ const Dashboard: React.FC = () => {
             <section className="content-dashboard">
               <Routes>
                 <Route path="/" element={<Monitoring />} />
-                <Route path="premium" element={<Premium />} />
               </Routes>
             </section>
           )}
