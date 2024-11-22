@@ -11,8 +11,10 @@ import Parceiro from './landingpage/Parceiros';
 import Rodape from './components/Rodapé';
 import Principal from './registro/Principal';
 import Dashboard from './dashboard/Dashboard';
-import Premium from './dashboard/Premium';
-
+import Pagamento from './registro/Pagamento';
+import SurveyForm from './registro/Formulario';
+import AlterarPerfil from './dashboard/AlterarPerfil';
+import Integrantes from './components/Integrantes';
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -54,6 +56,42 @@ export default function Home() {
           element={
             <>
               <Dashboard />
+            </>
+          }
+        />
+        <Route
+          path="/pagamento"
+          element={
+            <>
+            <Navbar />
+              <Pagamento />
+            </>
+          }
+        />
+        <Route
+          path="/formulario"
+          element={
+            <>
+            <Navbar />
+              <SurveyForm />
+            </>
+          }
+        />
+         <Route
+          path="/perfil"
+          element={
+            <>
+            <Navbar />
+              <AlterarPerfil />
+            </>
+          }
+        />
+        <Route
+          path="/integrantes"
+          element={
+            <>
+            <Navbar />
+            <Integrantes />
             </>
           }
         />

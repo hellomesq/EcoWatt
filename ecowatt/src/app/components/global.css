@@ -22,7 +22,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: rgba(60, 71, 71, 0.7); /* Fundo semi-transparente */
+  background-color: #2a3a39de;
   backdrop-filter: blur(10px); /* Adiciona um leve desfoque ao fundo (opcional) */
   color: white;
   z-index: 1000;
@@ -34,6 +34,7 @@ body {
   font-weight: 300;
   line-height: 1.5px;
   text-transform: uppercase;
+  margin-left: 50px;
 }
 
 .navbar-links {
@@ -54,7 +55,7 @@ body {
 }
 
 .navbar-links a:hover {
-  color: #dae6e0;
+  color: #f1eeeb;
 }
 
 /* NAVBAR RESPONSIVA */
@@ -213,4 +214,90 @@ body {
     font-size: 0.8rem;
   }
 
+}
+
+/* PÁGINA DOS INTEGRANTES */
+
+/* Centraliza o título na tela */
+.title__int {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+/* Estiliza o título com um gradiente e centraliza */
+.title__int h2 {
+  color: black;
+  max-width: 551px;
+  font-size: 25px;
+}
+
+/* Estiliza o link dentro do título */
+.title__int a {
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: lighter;
+  color: rgb(0, 0, 0);
+}
+
+/* Estiliza o ícone dentro do título */
+.title__int i {
+  font-size: 1.2rem;
+  color: black;
+  margin: 10px;
+}
+
+/* Centraliza o container de perfis horizontalmente */
+.container-profile {
+  max-width: 538px;
+  padding-bottom: 27px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Adiciona esta linha para centralizar os itens em coluna */
+}
+
+/* Estiliza a lista de perfis */
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estiliza cada perfil dentro da lista de perfis */
+.profile-column {
+  display: flex;
+  gap: 20px;
+  align-items: center; /* Alinha itens no centro verticalmente */
+}
+
+/* Estiliza as imagens de perfil */
+.profile-image {
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+/* Estiliza os detalhes do perfil */
+.details {
+  font-size: 16px;
+  color: #000;
+  margin-top: 10px;
+}
+
+/* Adiciona padding aos detalhes e ao RM */
+.details,
+.rm {
+  padding: 15px 0;
+}
+
+/* Estiliza links de perfil */
+.details,
+.github-link {
+  text-decoration: none;
+  color: black;
 }

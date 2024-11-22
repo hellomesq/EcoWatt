@@ -8,13 +8,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: rgba(60, 71, 71, 0.7);
+    /*background-color: rgba(60, 71, 71, 0.7);*/
+    background-color: #2a3a39de;
     backdrop-filter: blur(10px);
     color: white;
     z-index: 1000;
 }
 
 .logo {
+    margin-left: 50px;
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 1.5px;
@@ -52,7 +54,7 @@
     box-sizing: border-box;
     width: 155px;
     max-height: calc(100vh - 90px);
-    background: rgba(49, 82, 68, 0.705);
+    background-color: #2a3a39;
     backdrop-filter: blur(10px);
     /* Adiciona um leve desfoque ao fundo (opcional) */
     padding: 15px;
@@ -88,16 +90,15 @@
 }
 
 .welcome-item {
-    margin-top: 15px;
-    font-size: 1.3rem;
-    color: rgb(237, 233, 233);
+    font-size: 1.1rem;
+    color: rgb(24, 23, 23);
     text-decoration: none;
     transition: color 0.3s ease;
     /* Animação suave para hover */
 }
 
 .welcome-item:hover {
-    color: #cacbcc;
+    color: #3f4041;
     /* Muda a cor no hover */
 }
 
@@ -107,12 +108,12 @@
     font-size: 16px;
     padding: 10px;
     border-radius: 4px;
-    transition: background-color 0.3s;
+    /*transition: background-color 0.3s;*/
 }
 
-.menu-item:hover {
-    background-color: #404040;
-}
+/*.menu-item:hover {
+    color: rgba(170, 187, 182, 0.705);
+}*/
 
 /* É a div geral */
 .main-section {
@@ -128,7 +129,7 @@
 
 /* Div das boas-vindas*/
 .welcome {
-    background: rgba(49, 82, 68, 0.705);
+    background: rgba(170, 187, 182, 0.705);
     /*background: linear-gradient(95deg, rgb(21, 48, 37), #f1eadf);*/
     /*background: linear-gradient(180deg, #2A363B, #C0B697);*/
     /*background-color: rgba(130, 148, 148, 0.39);*/
@@ -139,9 +140,10 @@
 }
 
 .welcome h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin: 0 0 10px;
-    font-weight: 300;
+    font-weight: bold;
+    color: #181717;
 }
 
 .tabs {
@@ -153,7 +155,7 @@
     text-decoration: none;
     font-size: 1.2;
     font-weight: none;
-    color: white;
+    color: black;
     position: relative;
 }
 
@@ -174,7 +176,7 @@
     border-radius: 8px;
     padding: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: -15px;
+    margin-top: -35px;
     width: 30%;
     margin-left: 3%;
 
@@ -189,7 +191,7 @@
 }
 
 .premium-container h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 15px;
     font-weight: bold;
     color: #313131;
@@ -201,3 +203,195 @@
     line-height: 1.6;
     max-width: 800px;
 }
+
+/* ALTERAR PERFIL */
+
+/* Estilos principais para o layout */
+.alterar-perfil {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .alterar-perfil h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  /* Layout dos quadrados */
+  .form-secao {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+  }
+  
+  .informacoes-usuario,
+  .informacoes-cartao {
+    flex: 1 1 48%;
+ 
+    max-width: 1200px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .form-group-perfil label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .form-group-perfil input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group-perfil input:focus {
+    border-color: #007bff;
+  }
+  
+  .form-group-perfil input::placeholder {
+    color: #aaa;
+  }
+  
+  /* Botões */
+  .botoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-submit:hover {
+    background-color: #218838;
+  }
+  
+  .btn-reset {
+    background-color: #f0ad4e;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-reset:hover {
+    background-color: #ec971f;
+  }
+  
+  .btn-delete {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-delete:hover {
+    background-color: #c82333;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .form-secao {
+      flex-direction: column;
+    }
+  
+    .informacoes-usuario,
+    .informacoes-cartao {
+      flex: 1 1 100%;
+    }
+  
+    .botoes {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  /* Pop-up de confirmação */
+.confirmacao-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .popup-container button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  .btn-confirm {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+  }
+  
+  .btn-confirm:hover {
+    background-color: #c82333;
+  }
+  
+  .btn-cancel {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #5a6268;
+  }
+  

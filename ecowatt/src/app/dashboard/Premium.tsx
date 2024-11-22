@@ -10,6 +10,7 @@ const Premium: React.FC = () => {
           detalhadas, insights personalizados e acesso prioritário às melhores
           dicas para economizar energia.
         </p>
+        <button>Assinar</button>
       </div>
     </div>
   );

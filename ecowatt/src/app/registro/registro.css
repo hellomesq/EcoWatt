@@ -58,7 +58,7 @@ form.sign-in-form {
 .input-field {
   max-width: 380px;
   width: 100%;
-  background-color: #e3e2e2;
+  background-color: #f1eeeb;
   margin: 10px 0;
   height: 55px;
   border-radius: 55px;
@@ -130,7 +130,9 @@ form.sign-in-form {
   right: 48%;
   transform: translateY(-50%);
   /*background-image: linear-gradient(95deg, #fdfde6 0%, #fafaef, #708f96 100%);*/
-  background-color:  #8aa095 ;
+  background-color:  #5e7c71 ;
+ /* background-color: #f1eeeb;*/
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
@@ -162,7 +164,7 @@ form.sign-in-form {
 }
 
 .panel .content {
-  color: #000000;
+  color: #ffffff;
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
 }
@@ -181,12 +183,12 @@ form.sign-in-form {
 .btn.transparent {
   margin: 0;
   background: none;
-  border: 2px solid #666;
+  border: 2px solid #f1e2c4;
   width: 130px;
   height: 41px;
   font-weight: 600;
   font-size: 0.8rem;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .right-panel .image,
@@ -425,4 +427,225 @@ form.sign-in-form {
     bottom: 28%;
     left: 50%;
   }
+}
+
+/* PAGAMENTO */
+
+/* Pagamento - Ajuste para Navbar e Footer */
+.payment-page {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 80px; /* Espaço para compensar a navbar fixa */
+  margin-bottom: 60px; /* Espaço para o rodapé */
+  font-family: Arial, sans-serif;
+  min-height: calc(100vh - 140px); /* Garante altura mínima da tela com navbar e rodapé */
+}
+
+.payment-form, .order-summary {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 48%;
+}
+
+.payment-form h2, .order-summary h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.payment-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-options button {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.payment-options .active {
+  background-color: #007bff;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.order-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order-summary ul li {
+  margin-bottom: 10px;
+}
+
+.price h3 {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.price p {
+  margin-top: -10px;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.subscribe-button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.subscribe-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .payment-page {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .payment-form, .order-summary {
+    width: 100%;
+  }
+}
+
+/* FORMULARIO */
+
+/* Main Container */
+.survey-form-container {
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.survey-header {
+  max-width: 40%;
+}
+
+.survey-header h1 {
+  font-size: 2rem;
+  color: #1D1D1D;
+}
+
+.survey-header p {
+  font-size: 1.1rem;
+  color: #4F4F4F;
+}
+
+/* Form Styling */
+.survey-form {
+  max-width: 500px; /* Define um tamanho fixo para o formulário */
+  padding: 20px;
+  border: 1px solid #E1E1E1;
+  border-radius: 8px;
+  background-color: #F9F9F9;
+  position: relative;
+  margin-top: 60px; /* Garante um espaço entre a barra e o conteúdo */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 120px; /* Tamanho fixo das perguntas */
+}
+
+.form-group h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  word-wrap: break-word; /* Faz a quebra de linha se necessário */
+}
+
+
+select {
+  width: 100%; /* Mantém a largura do select constante */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+select:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+
+/* Buttons */
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.prev-btn, .next-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.prev-btn {
+  background-color: #FFCC00;
+  color: white;
+}
+
+.next-btn {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: absolute; /* Barra fixada no topo */
+  top: 0; /* Fixa no topo do formulário */
+}
+
+.progress {
+  height: 100%;
+  background-color: #4CAF50;
+  border-radius: 5px;
 }
