@@ -1,37 +1,70 @@
 import React, { useState } from 'react';
 import Login from './Login';
 import Cadastro from './Cadastro';
-import CadastroFinal from './CadastroFinal'; // Novo componente para CPF e CEP
+import CadastroFinal from './CadastroFinal'; // Componente para a segunda etapa do cadastro
 import './registro.css';
 
 const Principal: React.FC = () => {
-  const [isSignUpMode, setIsSignUpMode] = useState(false);
+  const [isSignUpMode, setIsSignUpMode] = useState(false); // Alterna entre login e cadastro
   const [isFinalStep, setIsFinalStep] = useState(false); // Controle para a segunda etapa do cadastro
+  const [userData, setUserData] = useState({}); // Armazena os dados coletados
 
+  // Alterna entre as telas de login e cadastro
   const toggleMode = () => {
     setIsSignUpMode(!isSignUpMode);
-    setIsFinalStep(false); // Reinicia para o cadastro inicial
+    setIsFinalStep(false); // Reinicia para a primeira etapa do cadastro
   };
 
-  const goToNextStep = () => {
-    setIsFinalStep(true); // Avança para a próxima etapa (CPF e CEP)
+  // Avança para a segunda etapa do cadastro, armazenando os dados da primeira etapa
+  const handleNextStep = (data: any) => {
+    setUserData(data); // Armazena os dados da primeira etapa
+    setIsFinalStep(true);
   };
 
-  const goBackToPreviousStep = () => {
-    setIsFinalStep(false); // Volta para a primeira etapa
+  // Envia os dados completos ao backend
+  const handleFinalSubmit = (finalData: any) => {
+    const fullData = { ...userData, ...finalData }; // Combina os dados das duas etapas
+    console.log('Dados completos do cadastro:', fullData);
+
+    // Envia os dados para o backend
+    fetch('/api/cadastro', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(fullData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Cadastro realizado com sucesso:', data);
+        // Redireciona ou atualiza a interface após o sucesso
+      })
+      .catch((error) => {
+        console.error('Erro ao cadastrar:', error);
+        // Adiciona feedback para o usuário em caso de erro
+      });
   };
 
   return (
     <div className={`container-reg ${isSignUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
+          {/* Tela de Login */}
           {!isSignUpMode && <Login />}
-          {isSignUpMode && !isFinalStep && <Cadastro onNext={goToNextStep} />}
-          {isSignUpMode && isFinalStep && <CadastroFinal onBack={goBackToPreviousStep} />}
+
+          {/* Tela de Cadastro (primeira etapa) */}
+          {isSignUpMode && !isFinalStep && <Cadastro onNext={handleNextStep} />}
+
+          {/* Tela de Cadastro Final (segunda etapa) */}
+          {isSignUpMode && isFinalStep && (
+            <CadastroFinal
+              onBack={() => setIsFinalStep(false)} // Volta para a primeira etapa
+              onSubmit={handleFinalSubmit} // Envia os dados completos
+            />
+          )}
         </div>
       </div>
 
       <div className="panels-container">
+        {/* Painel do lado esquerdo */}
         <div className="panel left-panel">
           <div className="content">
             <h3>Novo(a) aqui?</h3>
@@ -42,6 +75,7 @@ const Principal: React.FC = () => {
           </div>
         </div>
 
+        {/* Painel do lado direito */}
         <div className="panel right-panel">
           <div className="content">
             <h3>Bem-vindo(a) de volta!</h3>

@@ -72,16 +72,17 @@ const SurveyForm: React.FC = () => {
                     {/* Pergunta 2 */}
                     {currentQuestion === 2 && (
                         <div className="form-group">
-                            <h2>What do you think about the product?</h2>
+                            <h2>Você utiliza aparelhos com classificação energética A+++ ou similar?</h2>
                             <select
                                 name="question_2"
                                 value={formData.question_2}
                                 onChange={handleInputChange}
                             >
-                                <option value="">Select an option</option>
-                                <option value="Good">Good</option>
-                                <option value="Average">Average</option>
-                                <option value="Bad">Bad</option>
+                                <option value="">Selecione uma opção</option>
+                                <option value="Good">Nunca</option>
+                                <option value="Average">Às vezes</option>
+                                <option value="Bad">Frequentemente</option>
+                                <option value="Bad">Sempre</option>
                             </select>
                         </div>
                     )}
@@ -89,16 +90,17 @@ const SurveyForm: React.FC = () => {
                     {/* Pergunta 3 */}
                     {currentQuestion === 3 && (
                         <div className="form-group">
-                            <h2>What features do you like?</h2>
+                            <h2>Você utiliza energia solar ou outras fontes renováveis em sua casa?</h2>
                             <select
                                 name="question_3"
                                 value={formData.question_3}
                                 onChange={handleInputChange}
                             >
-                                <option value="">Select an option</option>
-                                <option value="Feature 1">Feature 1</option>
-                                <option value="Feature 2">Feature 2</option>
-                                <option value="Feature 3">Feature 3</option>
+                                <option value="">Selecione uma opção</option>
+                                <option value="Feature 1">Não</option>
+                                <option value="Feature 2">Planejo adotar em breve</option>
+                                <option value="Feature 3">Sim, parcialmente</option>
+                                <option value="Feature 3">Sim, 100% renovável</option>
                             </select>
                         </div>
                     )}

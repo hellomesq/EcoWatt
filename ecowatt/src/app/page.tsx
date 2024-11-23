@@ -15,6 +15,8 @@ import Pagamento from './registro/Pagamento';
 import SurveyForm from './registro/Formulario';
 import AlterarPerfil from './dashboard/AlterarPerfil';
 import Integrantes from './components/Integrantes';
+import UploadPDF from './dashboard/UploadPdf';
+import CalcularImpacto from './dashboard/CalcularImpacto';
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -92,6 +94,22 @@ export default function Home() {
             <>
             <Navbar />
             <Integrantes />
+            </>
+          }
+        />
+         <Route
+          path="/upload"
+          element={
+            <>
+            <UploadPDF />
+            </>
+          }
+        />
+         <Route
+          path="/calculo"
+          element={
+            <>
+            <CalcularImpacto />
             </>
           }
         />
