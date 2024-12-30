@@ -3,4 +3,4 @@ Projeto para Global Solution, disponibilizado pela FIAP - Faculdade de Informát
 
 A nossa solução para o desafio proposto é a EcoWatt, uma plataforma inovadora que ajuda os consumidores a reduzir o consumo de energia por meio de estratégias de gamificação e conscientização.  Dessa forma, os clientes não apenas diminuem seus custos financeiros, mas também acumulam pontos e recompensas pela economia gerada. Além disso, contribuem para um futuro mais sustentável, ajudando a reduzir a emissão de gases de efeito estufa, um dos principais fatores das mudanças climáticas e do aquecimento global.
 
-**Instrução:  Para que a aplicação de Front-End funcione corretamente, os arquivos referentes ao Back-End (Java e Python) - que se encontram no próprio repositório - devem ser executados inicialmente.
+** Projeto temporiariamente incompleto
